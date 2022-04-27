@@ -35,7 +35,7 @@ const Navbar = () => {
             <Toolbar>
               <Typography component="div" sx={{ mr: 2, display: { xs: "none", md: "flex" } }}> 
                 <a href='/'>
-                  <img src={Logo} alt='logo' width='80px' style={{marginTop:'12px'}}/>
+                  <img src={Logo} alt='logo' width='70px' style={{marginTop:'12px'}}/>
                 </a> 
               </Typography>
               
@@ -73,6 +73,11 @@ const Navbar = () => {
                       <Typography textAlign="center"><a href={path[i]}>{page}</a></Typography>
                     </MenuItem>
                   ))}
+                  <div className={styles.login}>
+                    <a href='/login' >
+                      Join Us 
+                    </a>
+                </div>
                 </Menu>
               </Box>
               <Typography
@@ -81,7 +86,7 @@ const Navbar = () => {
                 sx={{ ml: 18,flexGrow: 1, display: { xs: "flex", md: "none" } }}
               >
                  <a href='/'>
-                  <img src={Logo} alt='logo' width='80px' style={{marginTop:'12px'}}/>
+                  <img src={Logo} alt='logo' width='70px' style={{marginTop:'12px'}}/>
                 </a> 
               </Typography>
               <Box className={styles.Box2} sx={{  flexGrow: 1,display: { xs: "none", md: "flex" } ,justifyContent:{xs:'none',md:'space-between'}}}>
