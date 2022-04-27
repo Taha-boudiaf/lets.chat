@@ -5,6 +5,7 @@ import Loading from './layout/Loading'
 const Home = lazy(()=>import('../view/Home'));
 const About = lazy(()=>import('../view/About'));
 const Contact = lazy(()=>import('../view/Contact'));
+const PageNotFound = lazy(()=>import('../view/PageNotFound'));
 
 
 export const HomePage = ()=>(
@@ -20,5 +21,10 @@ export const AboutPage = ()=>(
 export const ContactPage = ()=>(
     <Suspense fallback={<Loading/>}>
         <Contact/>
+    </Suspense>
+)
+export const PageNoFound = ()=>(
+    <Suspense fallback={<Loading/>}>
+        <PageNotFound/>
     </Suspense>
 )
