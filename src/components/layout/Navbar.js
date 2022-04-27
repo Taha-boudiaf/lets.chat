@@ -4,7 +4,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import styles from './css/navbar.module.css'
-import { Button, Container, IconButton, Menu } from '@mui/material';
+import {Container, IconButton, Menu } from '@mui/material';
 import Logo from '../../assets/logo/Logo.png'
 import { Box } from '@mui/system';
 import MenuItem from "@mui/material/MenuItem";
@@ -39,7 +39,7 @@ const Navbar = () => {
                 </a> 
               </Typography>
               
-              <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+              <Box className={styles.Box1} sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                 <IconButton
                   size="large"
                   aria-label="account of current user"
@@ -78,26 +78,29 @@ const Navbar = () => {
               <Typography
                 noWrap
                 component="div"
-                sx={{ ml: 22,flexGrow: 1, display: { xs: "flex", md: "none" } }}
+                sx={{ ml: 18,flexGrow: 1, display: { xs: "flex", md: "none" } }}
               >
                  <a href='/'>
                   <img src={Logo} alt='logo' width='80px' style={{marginTop:'12px'}}/>
                 </a> 
               </Typography>
-              <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-                {pages.map((page,i) => (
+              <Box className={styles.Box2} sx={{  flexGrow: 1,display: { xs: "none", md: "flex" } ,justifyContent:{xs:'none',md:'space-between'}}}>
+                <div className={styles.menu1}>
+                  {pages.map((page,i) => (
                   <a
                     href={path[i]}
                     key={page}
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: "white", display: "block" }}
                   >
                     {page}
                   </a>
                 ))}
-                <a>
-                  Join us 
-                </a>
+                </div>
+                <div className={styles.login}>
+                  <a href='/login' >
+                    Join Us 
+                  </a>
+                </div>
               </Box>
             </Toolbar>
           </Container>
