@@ -30,8 +30,8 @@ const Navbar = () => {
   return (
     <>
       <CssBaseline />
-        <AppBar className={styles.app__bar}>
-          <Container maxWidth="xl">
+        <AppBar className={styles.app__bar} position='relative'>
+          <Container maxWidth="lg">
             <Toolbar>
               <Typography component="div" sx={{ mr: 2, display: { xs: "none", md: "flex" } }}> 
                 <a href='/'>
