@@ -1,8 +1,10 @@
 import React from 'react'
-
+import loading from '../../assets/loading.gif'
 const Loading = () => {
   return (
-    <div>Loading</div>
+    <div>
+      <img src={loading} alt='loading'/>
+    </div>
   )
 }
 
