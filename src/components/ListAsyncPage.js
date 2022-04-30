@@ -6,7 +6,7 @@ const Home = lazy(()=>import('../view/Home'));
 const About = lazy(()=>import('../view/About'));
 const Contact = lazy(()=>import('../view/Contact'));
 const PageNotFound = lazy(()=>import('../view/PageNotFound'));
-
+const Login =lazy(()=>import('../view/Login'))
 
 export const HomePage = ()=>(
     <Suspense fallback={<Loading/>}>
@@ -26,5 +26,11 @@ export const ContactPage = ()=>(
 export const PageNoFound = ()=>(
     <Suspense fallback={<Loading/>}>
         <PageNotFound/>
+    </Suspense>
+)
+
+export const LoginPage = ()=>(
+    <Suspense fallback={<Loading/>}>
+        <Login/>
     </Suspense>
 )
