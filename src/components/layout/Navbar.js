@@ -77,6 +77,9 @@ const Navbar = () => {
                   ))}
                   <div>
                     <a href='/login' className={styles.login}>
+                      Login
+                    </a>
+                    <a href='/register' className={styles.login}>
                       Join Us 
                     </a>
                   </div>
@@ -104,7 +107,10 @@ const Navbar = () => {
                 ))}
                 </div>
                 <div className={styles.login}>
-                  <a href='/login' >
+                  <a href='/login' className={styles.simple}>
+                    Login
+                  </a>
+                  <a href='/register' >
                     Join Us 
                   </a>
                 </div>

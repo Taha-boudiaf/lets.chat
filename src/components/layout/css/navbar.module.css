@@ -23,6 +23,18 @@
     flex-grow: 1;
     justify-content: center;
 }
+.login{
+    display: flex;
+}
+.login .simple{
+    color: rgba(83, 82, 237, 0.8)!important;
+    background: #F3F5FA;
+}
+.login .simple:hover{
+    color: white!important;
+    color: #2f354262;
+    
+}
 .login a{
     background: rgba(83, 82, 237, 0.8);
     border-radius: 5px;
