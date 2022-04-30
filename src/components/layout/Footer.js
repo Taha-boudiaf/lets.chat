@@ -1,10 +1,11 @@
 import React from 'react'
+import { Typography } from '@mui/material'
 
 
 const Footer = () => {
   return (
     <footer style={footer}>
-        <p >Made with love by Taher Boudiaf. Let's.Chat © 2022.</p>
+        <Typography sx={{textAlign:{xs:'center'}}}>Made with love by Taher Boudiaf. Let's.Chat © 2022.</Typography>
     </footer>
   )
 }
