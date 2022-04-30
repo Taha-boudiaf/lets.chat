@@ -76,7 +76,7 @@ const Navbar = () => {
                     </MenuItem>
                   ))}
                   <div>
-                    <a href='/login' className={styles.login}>
+                    <a href='/login' className={styles.simple}>
                       Login
                     </a>
                     <a href='/register' className={styles.login}>

@@ -67,6 +67,20 @@ ul .login{
     font-weight: 500;
     line-height: 1.5rem;
 }
+ul .simple{
+    color: rgba(83, 82, 237, 0.8)!important;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgba(83, 82, 237, 0.8);
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    border-radius: 5px;
+    margin: 0px 5px;
+    margin-bottom: 5px;
+}
 .navbar_login__lR-mU .login:hover{
     background:#2F3542
 }
