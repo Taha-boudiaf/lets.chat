@@ -2,8 +2,9 @@ import { Container } from "@mui/material";
 import {BrowserRouter as Router,Routes ,Route } from "react-router-dom";
 import './App.css';
 import Navbar from './components/layout/Navbar';
-import {HomePage,AboutPage,ContactPage, PageNoFound} from './components/ListAsyncPage';
+import {HomePage,AboutPage,ContactPage, PageNoFound,LoginPage} from './components/ListAsyncPage';
 import Footer from './components/layout/Footer'
+
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<HomePage/>}/>
           <Route path="/about" element={<AboutPage/>}/>
           <Route path="/contact" element={<ContactPage/>}/>
+          <Route path="/login" element={<LoginPage/>}/>
           <Route path="*" element={<PageNoFound/>}/>
         </Routes>
         </Container> 
