@@ -35,7 +35,7 @@ const Home = () => {
         <Grid item xs={12} md={6} className={styles.landing__page}>
           <img src={LandingPage} alt='landing__page' />
         </Grid> 
-        <Grid item xs={12} display='flex' justifyContent='space-around'>
+        <Grid className={styles.RowBottom} item xs={12} display='flex' justifyContent='space-around'>
           <div>
             <Typography className={styles.bottom}>Participants</Typography>
             <img src={Contacts} alt='landing__page' className={styles.participants}/>
@@ -45,12 +45,11 @@ const Home = () => {
             <img src={Notifications} alt='landing__page' className={styles.Notifications}/>
           </div>
           <div>
-            <Typography className={styles.bottom}>Chat With Us</Typography>
+            <Typography className={styles.bottom3}>Chat With Us</Typography>
             <img src={ChatWithUs} alt='landing__page' className={styles.ChatWithUs}/>
           </div>
         </Grid> 
       </Grid>
-      
     </>
   )
 }
