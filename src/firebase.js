@@ -5,13 +5,14 @@ import {getStorage} from 'firebase/storage'
 
 // firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyC0XzrQBdOHlNzl0gp0tH7MxKVev06pakg",
-  authDomain: "let-s-chat-81a27.firebaseapp.com",
-  projectId: "let-s-chat-81a27",
-  storageBucket: "let-s-chat-81a27.appspot.com",
-  messagingSenderId: "895023908304",
-  appId: "1:895023908304:web:8c5a2f0cf6fc2ccc65a5d5",
-  measurementId: "G-6H7N24ZW2J"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain:process.env.REACT_APP_AUTH_DOMAIN ,
+    databaseURL: process.env.REACT_APP_DATABASE_URL ,
+    projectId:process.env.REACT_APP_PROJECT_ID ,
+    storageBucket:process.env.REACT_APP_STORAGE_BUCKET ,
+    messagingSenderId:process.env.REACT_APP_MESSAGING_SENDER_ID ,
+    appId:process.env.REACT_APP_APP_ID ,
+    measurementId:process.env.REACT_APP_MEASUREMENT_ID
 };
 
 // initialize app
