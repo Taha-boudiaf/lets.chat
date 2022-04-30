@@ -3,7 +3,7 @@
     box-shadow: none !important;
     border-bottom: solid 1px #1118271a!important;
 }
-a{
+.app__bar a{
     text-decoration: none;
     padding: 10px 20px;
     margin: 0px 5px;
@@ -30,5 +30,31 @@ a{
     justify-content: center;
 }
 .login a:hover{
+    background:#2F3542
+}
+/* menu */
+ul .pages{
+    padding: 10px 20px;
+    margin: 0px 5px;
+    color: #2F3542;
+    display: flex;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+ul .login{
+    background: rgba(83, 82, 237, 0.8);
+    border-radius: 5px;
+    color: #ffffff !important;
+    justify-content: center;
+    padding: 10px 20px;
+    margin: 0px 5px;
+    display: flex;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+.navbar_login__lR-mU .login:hover{
     background:#2F3542
 }
