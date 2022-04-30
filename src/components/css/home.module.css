@@ -15,7 +15,9 @@
     margin-top: 100px;
 }
 .btn{
-    
+    box-shadow: 5px 8px 21px -6px rgba(0,0,0,0.62);
+    -webkit-box-shadow: 5px 8px 21px -6px rgba(0,0,0,0.62);
+    -moz-box-shadow: 5px 8px 21px -6px rgba(0,0,0,0.62);
     color:#ffffff;
     background: #5352ED;
     padding: 15px 100px;
@@ -34,6 +36,11 @@
     font-size:16px;
     font-weight: 600;
     margin-bottom: 20px;
+}
+.bottom3{
+    font-size:16px;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 .participants{
     width: 120px;
@@ -62,6 +69,9 @@
        
         line-height: 2rem!important;
         font-size: larger;
+    }
+    .RowBottom{
+        display: none;
     }
   }
 
