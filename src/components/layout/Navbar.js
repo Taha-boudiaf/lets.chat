@@ -31,7 +31,7 @@ const Navbar = () => {
     <>
       <CssBaseline />
         <AppBar className={styles.app__bar} position='relative'>
-          <Container maxWidth="lg">
+          <Container maxWidth="lg"> 
             <Toolbar>
               <Typography component="div" sx={{ mr: 2, display: { xs: "none", md: "flex" } }}> 
                 <a href='/'>
@@ -70,14 +70,16 @@ const Navbar = () => {
                 >
                   {pages.map((page,i) => (
                     <MenuItem key={page} onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center"><a href={path[i]}>{page}</a></Typography>
+                      <Typography textAlign="center">
+                        <a className={styles.pages} href={path[i]}>{page}</a>
+                        </Typography>
                     </MenuItem>
                   ))}
-                  <div className={styles.login}>
-                    <a href='/login' >
+                  <div>
+                    <a href='/login' className={styles.login}>
                       Join Us 
                     </a>
-                </div>
+                  </div>
                 </Menu>
               </Box>
               <Typography
@@ -108,7 +110,7 @@ const Navbar = () => {
                 </div>
               </Box>
             </Toolbar>
-          </Container>
+          </Container> 
         </AppBar>
     </>
   )
