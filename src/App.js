@@ -9,14 +9,14 @@ function App() {
     <Router>
       <Navbar/>
       <div className='App'>
-        <Container maxWidth="lg">
+        <Container maxWidth="lg"> 
           <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/about" element={<AboutPage/>}/>
           <Route path="/contact" element={<ContactPage/>}/>
           <Route path="*" element={<PageNoFound/>}/>
         </Routes>
-        </Container>
+        </Container> 
       </div>
      </Router>
   );
