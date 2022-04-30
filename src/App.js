@@ -3,6 +3,7 @@ import {BrowserRouter as Router,Routes ,Route } from "react-router-dom";
 import './App.css';
 import Navbar from './components/layout/Navbar';
 import {HomePage,AboutPage,ContactPage, PageNoFound} from './components/ListAsyncPage';
+import Footer from './components/layout/Footer'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         </Routes>
         </Container> 
       </div>
+      <Footer/>
      </Router>
   );
 }
