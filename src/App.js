@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 import {BrowserRouter as Router,Routes ,Route } from "react-router-dom";
 import {HomePage,AboutPage,ContactPage, PageNoFound,LoginPage,RegisterPage} from './components/ListAsyncPage';
-// import { UserAuthContext } from "./context/ChatContext";
+import { UserAuthContext } from "./context/ChatContext";
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer'
 
@@ -9,7 +9,7 @@ import './App.css';
 
 function App() {
   return (
-    // <UserAuthContext> 
+    <UserAuthContext> 
       <Router>
         <Navbar/>
           <div className='App'>
@@ -26,7 +26,7 @@ function App() {
           </div>
         <Footer/>
       </Router>
-    // {/* </UserAuthContext>   */}
+    </UserAuthContext>  
   );
 }
 
