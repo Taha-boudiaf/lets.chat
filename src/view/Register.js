@@ -1,29 +1,44 @@
 import React, { useState } from 'react'
 import { Container, Grid, Typography } from '@mui/material'
-import { Form, Formik } from 'formik'
+import { Form, Formik} from 'formik'
 import {Validation} from '../components/FormUI/Yup/Yup'
 import Textfield from '../components/FormUI/Textfield/index'
 import Button from '../components/FormUI/Submit/index'
+import { useAuth } from '../context/ChatContext'
+import { useNavigate } from 'react-router-dom'
+import { doc, setDoc, Timestamp } from 'firebase/firestore'
+import { db } from '../firebase'
 
 
-
-const INITIAL_FORM_STATE = {
-  firstName:'',
-  lastName:'',
-  email:'',
-  password:''
-}
 
 const FORM_VALIDATION = Validation;
 
 const Register = () => {
 
-  const [data,setData] = useState({loading:false})
+  const [data,setData] = useState({
+    firstName:'',
+    lastName:'',
+    email:'',
+    password:'',
+    phoneNumber:''
+  })
 
-  // const {Register} = useAuth();
-
-  const handleSubmit = (values)=>{
-    setData({...values,loading:true})
+  const Navigate = useNavigate();
+  
+  const {Register} = useAuth();
+  
+  const handleSubmit = async(data)=>{
+    setData({...data})
+    const res = await Register(data.email,data.password)
+    await setDoc(doc(db,"users",res.user.uid),
+       {
+         uid:res.user.uid,
+         ...data,
+         createdAt:Timestamp.fromDate(new Date()),
+         isOnline:true,
+       }
+       );
+    Navigate('/')
   }
   
   return (
@@ -31,7 +46,7 @@ const Register = () => {
     <Grid container>
       <Grid item xs={6}>
         <Container>
-          <Formik initialValues={{...INITIAL_FORM_STATE}} validationSchema={FORM_VALIDATION} onSubmit={handleSubmit}> 
+          <Formik initialValues={{...data}} validationSchema={FORM_VALIDATION} onSubmit={handleSubmit}> 
             <Form>
               <Grid>
                 <Typography>
@@ -69,7 +84,7 @@ const Register = () => {
                 <Textfield name='phoneNumber' label='number'/>
               </Grid>
               <Grid item xs={6}>
-                <Button>
+                <Button >
                   submit
                 </Button>
               </Grid>
