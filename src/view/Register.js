@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Grid, Typography } from '@mui/material'
 import { Form, Formik } from 'formik'
-import * as Yup from 'yup'
+import {Validation} from '../components/FormUI/Yup/Yup'
 import Textfield from '../components/FormUI/Textfield/index'
 import Button from '../components/FormUI/Submit/index'
 
 
-const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
 const INITIAL_FORM_STATE = {
   firstName:'',
@@ -15,28 +14,24 @@ const INITIAL_FORM_STATE = {
   password:''
 }
 
-const FORM_VALIDATION = Yup.object().shape({
-  firstName:Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
-  lastName:Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
-  email:Yup.string().email('Invalid Email').required('Required'),
-  password: Yup.string()
-  .required('No password provided.') 
-  .min(8, 'Password is too short - should be 8 chars minimum.')
-  .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
-  phoneNumber: Yup.string().matches(phoneRegExp, 'Phone number is not valid')
-})
-
-
+const FORM_VALIDATION = Validation;
 
 const Register = () => {
- 
+
+  const [data,setData] = useState({loading:false})
+
+  // const {Register} = useAuth();
+
+  const handleSubmit = (values)=>{
+    setData({...values,loading:true})
+  }
   
   return (
   <div>
     <Grid container>
       <Grid item xs={6}>
         <Container>
-          <Formik initialValues={{...INITIAL_FORM_STATE}} validationSchema={FORM_VALIDATION} onSubmit={values => {console.log(values); }}> 
+          <Formik initialValues={{...INITIAL_FORM_STATE}} validationSchema={FORM_VALIDATION} onSubmit={handleSubmit}> 
             <Form>
               <Grid>
                 <Typography>
