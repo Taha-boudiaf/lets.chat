@@ -11,5 +11,7 @@ export const Validation  = Yup.object().shape({
     .required('No password provided.') 
     .min(8, 'Password is too short - should be 8 chars minimum.')
     .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
-    phoneNumber: Yup.string().matches(phoneRegExp, 'Phone number is not valid')
+    phoneNumber: Yup.string().matches(phoneRegExp, 'Phone number is not valid'),
+    birthDay:Yup.date().required('Required'),
+    
   })
