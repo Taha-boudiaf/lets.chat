@@ -49,8 +49,11 @@ const Register = () => {
     <Grid container spacing={4} className={styles.con} >
       <Paper className={styles.Paper} >
           <div>
-          <Typography>
-            hello
+          <Typography variant="h3" style={{fontWeight: '600', fontSize: '2rem'}}>
+            Create Account.
+          </Typography>
+          <Typography variant="subtitle1" style={{marginBottom: '35px',lineHeight: '2.75',color:'#757982'}}>
+            Share your thoughts with the world from today
           </Typography>
           </div>
         <Grid item xs={12} >
@@ -58,7 +61,7 @@ const Register = () => {
               <Form>
                 <Grid container spacing={2}>
                 <Grid item xs={6}>
-                  <Textfield className={styles.field} name='firstName' label='firstName'/>
+                  <Textfield  className={styles.field} name='firstName' label='firstName'/>
                 </Grid>
                 <Grid item xs={6}>
                   <Textfield className={styles.field} name='lastName' label='lastName'/>
@@ -77,7 +80,7 @@ const Register = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <Button className={styles.btn}>
-                    submit
+                  Conect Now
                   </Button>
                 </Grid> 
                 </Grid>
