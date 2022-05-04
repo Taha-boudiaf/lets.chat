@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container, Grid, Typography } from '@mui/material'
+import {  Grid, Paper, Typography } from '@mui/material'
 import { Form, Formik} from 'formik'
 import {Validation} from '../components/FormUI/Yup/Yup'
 import Textfield from '../components/FormUI/Textfield/index'
@@ -8,8 +8,8 @@ import { useAuth } from '../context/ChatContext'
 import { useNavigate } from 'react-router-dom'
 import { doc, setDoc, Timestamp } from 'firebase/firestore'
 import { db } from '../firebase'
-
-
+import DateTimePicker from '../components/FormUI/DataTimePicker/index'
+import styles from '../components/css/register.module.css'
 
 const FORM_VALIDATION = Validation;
 
@@ -20,7 +20,9 @@ const Register = () => {
     lastName:'',
     email:'',
     password:'',
-    phoneNumber:''
+    phoneNumber:'',
+    birthDay:'',
+    country:''
   })
 
   const Navigate = useNavigate();
@@ -32,68 +34,59 @@ const Register = () => {
     const res = await Register(data.email,data.password)
     await setDoc(doc(db,"users",res.user.uid),
        {
-         uid:res.user.uid,
          ...data,
+         uid:res.user.uid,
          createdAt:Timestamp.fromDate(new Date()),
          isOnline:true,
+         admin:false,
        }
        );
     Navigate('/')
   }
   
   return (
-  <div>
-    <Grid container>
-      <Grid item xs={6}>
-        <Container>
-          <Formik initialValues={{...data}} validationSchema={FORM_VALIDATION} onSubmit={handleSubmit}> 
-            <Form>
-              <Grid>
-                <Typography>
-                  firstName
-                </Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Textfield name='firstName' label='firstName'/>
-              </Grid>
-              <Grid>
-                <Typography>
-                  lastName
-                </Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Textfield name='lastName' label='lastName'/>
-              </Grid>
-              <Grid>
-                <Typography>
-                  Email
-                </Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Textfield name='email' label='lastName'/>
-              </Grid>
-              <Grid>
-                <Typography>
-                  password
-                </Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Textfield name='password' label='password' type='password'/>
-              </Grid>
-              <Grid item xs={6}>
-                <Textfield name='phoneNumber' label='number'/>
-              </Grid>
-              <Grid item xs={6}>
-                <Button >
-                  submit
-                </Button>
-              </Grid>
-            </Form>
-          </Formik>
-        </Container>
-      </Grid>
+  <>
+    <Grid container spacing={4} className={styles.con} >
+      <Paper className={styles.Paper} >
+          <div>
+          <Typography>
+            hello
+          </Typography>
+          </div>
+        <Grid item xs={12} >
+            <Formik initialValues={{...data}} validationSchema={FORM_VALIDATION} onSubmit={handleSubmit}> 
+              <Form>
+                <Grid container spacing={2}>
+                <Grid item xs={6}>
+                  <Textfield className={styles.field} name='firstName' label='firstName'/>
+                </Grid>
+                <Grid item xs={6}>
+                  <Textfield className={styles.field} name='lastName' label='lastName'/>
+                </Grid>
+                <Grid item xs={12}>
+                  <Textfield className={styles.field} name='email' label='lastName'/>
+                </Grid>
+                <Grid item xs={12}>
+                  <Textfield className={styles.field} name='password' label='password' type='password'/>
+                </Grid>
+                <Grid item xs={12}>
+                  <Textfield className={styles.field} name='phoneNumber' label='number'/>
+                </Grid>
+                <Grid item xs={12}>
+                  <DateTimePicker className={styles.field} name="birthDay" label="birthDay"/>
+                </Grid>
+                <Grid item xs={12}>
+                  <Button className={styles.btn}>
+                    submit
+                  </Button>
+                </Grid> 
+                </Grid>
+              </Form>
+            </Formik>
+        </Grid>
+      </Paper>
     </Grid>
-  </div>
+  </>
   )
 }
 
