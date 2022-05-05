@@ -45,7 +45,7 @@ const Register = () => {
          admin:false,
        }
        );
-    Navigate('/')
+    Navigate('/chat')
   }
   
   return (
@@ -80,20 +80,28 @@ const Register = () => {
                   <Textfield className={styles.field} name='phoneNumber' label='number'/>
                 </Grid>
                 <Grid item xs={6}>
-                  <DateTimePicker className={styles.field} name="birthDay" label="birthDay"/>
-                </Grid>
-                <Grid item xs={6}>
                     <Select
                       name="country"
                       label="Country"
                       options={countries}
+                      className={styles.field}
+                      autoWidth
                     />
                   </Grid>
+                <Grid item xs={6}>
+                  <DateTimePicker className={styles.field} name="birthDay" label="birthDay"/>
+                </Grid>
+                
                 <Grid item xs={12}>
                   <Button className={styles.btn}>
                   Conect Now
                   </Button>
                 </Grid> 
+                <div>
+                  <Typography variant="subtitle1" style={{marginLeft:'20px',marginBottom: '10px',lineHeight: '2.75',color:'#757982'}}>
+                    You have an account? <a href='/login'>Connect Now</a>
+                  </Typography>
+                </div>
                 </Grid>
               </Form>
             </Formik>
