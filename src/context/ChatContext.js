@@ -20,10 +20,10 @@ export const UserAuthContext = ({children})=>{
     const Register = (email,password)=>{
         return createUserWithEmailAndPassword(auth,email,password);
     }
-    // // function to login 
-    // const Login = (email,password)=>{
-    //     return signInWithEmailAndPassword(auth,email,password)
-    // }
+    // function to login 
+    const Login = (email,password)=>{
+        return signInWithEmailAndPassword(auth,email,password)
+    }
     // // function to signOut
     // const  Signout = ()=>{
     //     return signOut(auth);
@@ -43,7 +43,7 @@ export const UserAuthContext = ({children})=>{
     const values={
         Register,
         // Signout,
-        // Login,
+        Login,
         // user
     }
     
