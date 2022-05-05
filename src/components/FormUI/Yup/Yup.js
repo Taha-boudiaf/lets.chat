@@ -13,5 +13,5 @@ export const Validation  = Yup.object().shape({
     .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
     phoneNumber: Yup.string().matches(phoneRegExp, 'Phone number is not valid'),
     birthDay:Yup.date().required('Required'),
-    
+    country: Yup.string().required('Required'),
   })
