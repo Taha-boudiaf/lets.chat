@@ -5,7 +5,7 @@ import { Typography } from '@mui/material'
 const Footer = () => {
   return (
     <footer style={footer}>
-        <Typography sx={{textAlign:{xs:'center'}}}>Made with love by Taher Boudiaf. Let's<span style={{color:'violet'}}>.Chat</span> © 2022.</Typography>
+        <Typography sx={{textAlign:{xs:'center'}}}>Made with love by Taher Boudiaf. Let's<span style={{color:'#7373f0'}}>.Chat</span> © 2022.</Typography>
     </footer>
   )
 }
