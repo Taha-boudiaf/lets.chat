@@ -10,6 +10,10 @@ import { doc, setDoc, Timestamp } from 'firebase/firestore'
 import { db } from '../firebase'
 import DateTimePicker from '../components/FormUI/DataTimePicker/index'
 import styles from '../components/css/register.module.css'
+import Select from '../components/FormUI/Select/index'
+import countries from '../data/data.json'
+
+
 
 const FORM_VALIDATION = Validation;
 
@@ -61,23 +65,30 @@ const Register = () => {
               <Form>
                 <Grid container spacing={2}>
                 <Grid item xs={6}>
-                  <Textfield  className={styles.field} name='firstName' label='firstName'/>
+                  <Textfield  className={styles.field} name='firstName' label='FirstName'/>
                 </Grid>
                 <Grid item xs={6}>
-                  <Textfield className={styles.field} name='lastName' label='lastName'/>
+                  <Textfield className={styles.field} name='lastName' label='LastName'/>
                 </Grid>
                 <Grid item xs={12}>
-                  <Textfield className={styles.field} name='email' label='lastName'/>
+                  <Textfield className={styles.field} name='email' label='Email'/>
                 </Grid>
                 <Grid item xs={12}>
-                  <Textfield className={styles.field} name='password' label='password' type='password'/>
+                  <Textfield className={styles.field} name='password' label='Password' type='password'/>
                 </Grid>
                 <Grid item xs={12}>
                   <Textfield className={styles.field} name='phoneNumber' label='number'/>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={6}>
                   <DateTimePicker className={styles.field} name="birthDay" label="birthDay"/>
                 </Grid>
+                <Grid item xs={6}>
+                    <Select
+                      name="country"
+                      label="Country"
+                      options={countries}
+                    />
+                  </Grid>
                 <Grid item xs={12}>
                   <Button className={styles.btn}>
                   Conect Now
