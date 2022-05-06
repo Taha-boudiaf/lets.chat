@@ -8,6 +8,8 @@ const Contact = lazy(()=>import('../view/Contact'));
 const PageNotFound = lazy(()=>import('../view/PageNotFound'));
 const Login =lazy(()=>import('../view/Login'))
 const Register =lazy(()=>import('../view/Register'))
+const Chat =lazy(()=>import('../view/Chat'))
+
 
 
 export const HomePage = ()=>(
@@ -39,5 +41,11 @@ export const LoginPage = ()=>(
 export const RegisterPage =()=>(
     <Suspense fallback={<Loading/>}>
         <Register/>
+    </Suspense>
+)
+
+export const ChatPage =()=>(
+    <Suspense fallback={<Loading/>}>
+        <Chat/>
     </Suspense>
 )
