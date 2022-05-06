@@ -2,14 +2,13 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {  Grid, Paper, Typography } from '@mui/material'
 import { Form, Formik } from 'formik'
-import {Validation} from '../components/FormUI/Yup/Yup'
-import styles from '../components/css/register.module.css'
+import {Validation} from '../components/FormUI/Yup/loginYup'
 import { useAuth } from '../context/ChatContext'
-import Button from '../components/FormUI/Submit/index'
-import TextField from '../components/FormUI/Textfield/index'
 import { doc, updateDoc } from 'firebase/firestore'
 import { db } from '../firebase'
-
+import styles from '../components/css/register.module.css'
+import TextField from '../components/FormUI/Textfield/index'
+import Button from '../components/FormUI/Submit/index'
 
 const FORM_VALIDATION = Validation;
 
@@ -19,22 +18,27 @@ const Login = () => {
   const [data,setData] = useState({
     email:'',
     password:'',
+    
   })
   const {Login} = useAuth();
   const Navigate = useNavigate();
+
   const handleSubmit = async(data)=>{
     setData({...data})
-    const res = await Login(data.email,data.password)
-    await updateDoc(doc(db,"users",res.user.uid),
-       {
-         isOnline:true,
-       });
-    Navigate('/')
+      
+      const res = await Login(data.email,data.password)
+      await updateDoc(doc(db,"users",res.user.uid),
+        {
+          isOnline:true,
+        });
+        
+      Navigate('/chat')
   }
+  
   return (
     <>
       <Grid container spacing={4} className={styles.con} >
-      <Paper className={styles.Paper} >
+      <Paper className={styles.Paper} style={{marginBottom:'15px'}}>
           <div>
             <Typography variant="h3" style={{fontWeight: '600', fontSize: '2rem'}}>
               Welcome Back!
