@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
 import {BrowserRouter as Router,Routes ,Route } from "react-router-dom";
-import {HomePage,AboutPage,ContactPage, PageNoFound,LoginPage,RegisterPage} from './components/ListAsyncPage';
+import {HomePage,AboutPage,ContactPage, PageNoFound,LoginPage,RegisterPage,ChatPage} from './components/ListAsyncPage';
 import { UserAuthContext } from "./context/ChatContext";
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer'
@@ -20,6 +20,7 @@ function App() {
               <Route path="/contact" element={<ContactPage/>}/>
               <Route path="/login" element={<LoginPage/>}/>
               <Route path="/register" element={<RegisterPage/>}/>
+              <Route path="/chat" element={<ChatPage/>}/>
               <Route path="*" element={<PageNoFound/>}/>
             </Routes>
             </Container> 
