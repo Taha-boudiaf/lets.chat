@@ -85,7 +85,7 @@ const Register = () => {
                       label="Country"
                       options={countries}
                       className={styles.field}
-                      autoWidth
+                      
                     />
                   </Grid>
                 <Grid item xs={6}>
@@ -98,7 +98,7 @@ const Register = () => {
                   </Button>
                 </Grid> 
                 <div>
-                  <Typography variant="subtitle1" style={{marginLeft:'20px',marginBottom: '10px',lineHeight: '2.75',color:'#757982'}}>
+                  <Typography variant="subtitle1" style={{marginLeft:'20px',marginBottom: '5px',marginTop:'10px',lineHeight: '2.75',color:'#757982'}}>
                     You have an account? <a href='/login'>Connect Now</a>
                   </Typography>
                 </div>
