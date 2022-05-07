@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -9,6 +9,7 @@ import Logo from '../../assets/logo/Logo.png'
 import { Box } from '@mui/system';
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useAuth } from '../../context/ChatContext';
 
 // pages
 const pages = ["Home", "About", "Contact"];
@@ -16,8 +17,10 @@ const pages = ["Home", "About", "Contact"];
 const path = ['/','/about','/contact']
 
 const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = useState(null);
+  const {user} = useAuth()
 
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  
   // open and close menu bar 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -29,7 +32,7 @@ const Navbar = () => {
 
   return (
     <>
-      <CssBaseline />
+    {user? (<div style={{display:'none'}}></div>):(<><CssBaseline />
         <AppBar className={styles.app__bar} position='relative'>
           <Container maxWidth="lg"> 
             <Toolbar>
@@ -117,7 +120,8 @@ const Navbar = () => {
               </Box>
             </Toolbar>
           </Container> 
-        </AppBar>
+        </AppBar></>)
+        }
     </>
   )
 }
