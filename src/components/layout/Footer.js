@@ -1,12 +1,17 @@
 import React from 'react'
 import { Typography } from '@mui/material'
+import { useAuth } from '../../context/ChatContext'
 
 
 const Footer = () => {
-  return (
-    <footer style={footer}>
-        <Typography sx={{textAlign:{xs:'center'}}}>Made with love by Taher Boudiaf. Let's<span style={{color:'#7373f0'}}>.Chat</span> © 2022.</Typography>
-    </footer>
+  const {user} = useAuth()
+  return (<>
+    {user? (<div style={{display:'none'}}></div>):(<footer style={footer}>
+          <Typography sx={{textAlign:{xs:'center'}}}>Made with love by Taher Boudiaf. Let's<span style={{color:'#7373f0'}}>.Chat</span> © 2022.</Typography>
+      </footer>)}
+  </>
+    
+    
   )
 }
 const footer ={
