@@ -32,7 +32,7 @@ const Login = () => {
           isOnline:true,
         });
         
-      Navigate('/chat')
+      Navigate('/chat',{ replace: true })
   }
   
   return (
