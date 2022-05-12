@@ -8,6 +8,14 @@ import MailIcon from '@mui/icons-material/Mail';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import Toolbar from '@mui/material/Toolbar';
+import { ChatItem } from "react-chat-elements";
+import { Avatar } from "react-chat-elements";
+
+import "react-chat-elements/dist/main.css"; 
+
+
+
+
 const drawerWidth = 240;
 
 const SideBar = (props) => {
@@ -17,16 +25,26 @@ const SideBar = (props) => {
 
     const drawer = (
         <div>
+          <Avatar
+              src={"https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"}
+              alt={"logo"}
+              size="large"
+              type="circle flexible"
+          />
           <Toolbar />
           <Divider />
           <List>
             {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
+             
+                <ChatItem
+                    key={text}
+                    avatar={"https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"}
+                    alt={"Reactjs"}
+                    title={text}
+                    subtitle={"What are you doing?"}
+                    date={new Date()}
+                    unread={index}
+                />
             ))}
           </List>
           <Divider />
