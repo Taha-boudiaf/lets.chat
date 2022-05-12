@@ -1,4 +1,5 @@
 import { lazy,Suspense } from "react";
+
 import Loading from './layout/Loading'
 
 
@@ -9,7 +10,7 @@ const PageNotFound = lazy(()=>import('../view/PageNotFound'));
 const Login =lazy(()=>import('../view/Login'))
 const Register =lazy(()=>import('../view/Register'))
 const Chat =lazy(()=>import('../view/Chat'))
-
+const Profile =lazy(()=>import('../view/Profile'))
 
 
 export const HomePage = ()=>(
@@ -47,5 +48,11 @@ export const RegisterPage =()=>(
 export const ChatPage =()=>(
     <Suspense fallback={<Loading/>}>
         <Chat/>
+    </Suspense>
+)
+
+export const ProfilePage =()=>(
+    <Suspense fallback={<Loading/>}>
+        <Profile/>
     </Suspense>
 )
