@@ -16,6 +16,7 @@ const Profile = () => {
   const [img, setImg] = useState("");
 
   const [user, setUser] = useState();
+
   useEffect(() => {
     getDoc(doc(db, "users", auth.currentUser.uid)).then((docSnap) => {
       if (docSnap.exists) {
@@ -51,6 +52,7 @@ const Profile = () => {
       };
       uploadImg();
     }
+    // eslint-disable-next-line
   }, [img]);
 
   const deleteImage = async () => {
