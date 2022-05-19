@@ -129,9 +129,13 @@ const ResponsiveDrawer = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            {chat.name}
-          </Typography>
+          {chat ? (
+            <Typography variant="h6" noWrap component="div">
+              {chat.firstName + " " + chat.lastName}
+            </Typography>
+          ) : (
+            <h3 className="no_conv">Select a user to start conversation</h3>
+          )}
         </Toolbar>
       </AppBar>
       <Box
@@ -151,17 +155,25 @@ const ResponsiveDrawer = () => {
         }}
       >
         <Toolbar />
-        <div>
-          {msgs.length
-            ? msgs.map((msg, i) => <Message key={i} msg={msg} user1={user1} />)
-            : null}
-        </div>
-        <MessageForm
-          handleSubmit={handleSubmit}
-          text={text}
-          setText={setText}
-          setImg={setImg}
-        />
+        {chat ? (
+          <>
+            <div className="messages">
+              {msgs.length
+                ? msgs.map((msg, i) => (
+                    <Message key={i} msg={msg} user1={user1} />
+                  ))
+                : null}
+            </div>
+            <MessageForm
+              handleSubmit={handleSubmit}
+              text={text}
+              setText={setText}
+              setImg={setImg}
+            />
+          </>
+        ) : (
+          <div style={{ display: "none" }}></div>
+        )}
       </Box>
     </Box>
   );
