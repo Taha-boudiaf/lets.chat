@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from "react";
 // import Moment from "react-moment";
+import "../../components/chat/css/message.css";
 const Message = ({ msg, user1 }) => {
   const scrollRef = useRef();
 
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [msg]);
+
   return (
     <div
       className={`message_wrapper ${msg.from === user1 ? "own" : ""}`}
