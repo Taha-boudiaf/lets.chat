@@ -151,6 +151,19 @@
   .img_container:hover .overlay {
     opacity: 1;
   }
+
+  /* users  */
+  .users_container {
+    margin-top: 10px;
+    border-right: 1px dashed var(--color-6);
+    overflow-y: auto;
+  }
+  
+
+
+
+
+
   @media screen and (max-width: 450px) {
     .card {
       display: block;
