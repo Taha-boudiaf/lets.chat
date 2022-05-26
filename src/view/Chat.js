@@ -7,7 +7,6 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-
 import SideBar from "../components/chat/SideBar";
 import MessageForm from "../components/chat/MessageForm";
 import {
@@ -24,6 +23,8 @@ import {
 import { auth, db, storage } from "../firebase";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import Message from "../components/chat/Message";
+import "../components/chat/css/chat.css";
+import Img from "../assets/svg/user.png";
 
 const drawerWidth = 240;
 
@@ -54,6 +55,7 @@ const ResponsiveDrawer = () => {
       setUsers(users);
     });
     return () => subscriber();
+    // eslint-disable-next-line
   }, []);
   // select user to conversetion
   const selectUser = (user) => {
@@ -95,6 +97,8 @@ const ResponsiveDrawer = () => {
       createdAt: Timestamp.fromDate(new Date()),
       media: url || "",
     });
+    setText("");
+    setImg("");
     // unread message last message
     await setDoc(doc(db, "lastMsg", id), {
       text,
@@ -118,6 +122,7 @@ const ResponsiveDrawer = () => {
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
         }}
+        style={{ background: "#5352ED" }}
       >
         <Toolbar>
           <IconButton
@@ -130,9 +135,12 @@ const ResponsiveDrawer = () => {
             <MenuIcon />
           </IconButton>
           {chat ? (
-            <Typography variant="h6" noWrap component="div">
-              {chat.firstName + " " + chat.lastName}
-            </Typography>
+            <>
+              <img src={chat.avatar || Img} className="avatar c" alt="avatar" />
+              <Typography variant="h6" noWrap component="div">
+                {chat.firstName + " " + chat.lastName}
+              </Typography>
+            </>
           ) : (
             <h3 className="no_conv">Select a user to start conversation</h3>
           )}
@@ -143,8 +151,7 @@ const ResponsiveDrawer = () => {
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <SideBar users={users} selectUser={selectUser} />
+        <SideBar users={users} selectUser={selectUser} user={user1} />
       </Box>
       <Box
         component="main"
@@ -155,15 +162,23 @@ const ResponsiveDrawer = () => {
         }}
       >
         <Toolbar />
+        <div className="messages_container">
+          {chat ? (
+            <>
+              <div className="messages">
+                {msgs.length
+                  ? msgs.map((msg, i) => (
+                      <Message key={i} msg={msg} user1={user1} />
+                    ))
+                  : null}
+              </div>
+            </>
+          ) : (
+            <div style={{ display: "none" }}></div>
+          )}
+        </div>
         {chat ? (
           <>
-            <div className="messages">
-              {msgs.length
-                ? msgs.map((msg, i) => (
-                    <Message key={i} msg={msg} user1={user1} />
-                  ))
-                : null}
-            </div>
             <MessageForm
               handleSubmit={handleSubmit}
               text={text}
