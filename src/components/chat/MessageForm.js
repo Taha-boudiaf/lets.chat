@@ -1,36 +1,38 @@
-import React from 'react'
+import React from "react";
+import Attachment from "../../assets/svg/Attachment";
+import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
+import "../chat/css/messageform.css";
 
-const MessageForm = ({handleSubmit,text,setText,setImg}) => {
+const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
   return (
-    <div>
-     <form 
-        className="message_form" 
-        onSubmit={handleSubmit}
-    >
-      <label htmlFor="img">
-        {/* <Attachment /> */}
-      </label>
-      <input
-        onChange={(e) => setImg(e.target.files[0])}
-        type="file"
-        id="img"
-        accept="image/*"
-        style={{ display: "none" }}
-      />
-      <div>
+    <>
+      <form className="message_form" onSubmit={handleSubmit}>
+        <label htmlFor="img">
+          <Attachment />
+        </label>
         <input
-          type="text"
-          placeholder="Enter message"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
+          onChange={(e) => setImg(e.target.files[0])}
+          type="file"
+          id="img"
+          accept="image/*"
+          style={{ display: "none" }}
         />
-      </div>
-      <div>
-        <button className="btn">Send</button>
-      </div>
-    </form>
-    </div>
-  )
-}
+        <div>
+          <input
+            type="text"
+            placeholder="Enter message"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+        </div>
+        <div>
+          <button className="btn">
+            <SendOutlinedIcon />
+          </button>
+        </div>
+      </form>
+    </>
+  );
+};
 
-export default MessageForm
+export default MessageForm;
