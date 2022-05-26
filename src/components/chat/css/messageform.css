@@ -1,0 +1,43 @@
+.message_form {
+  position: absolute;
+  /* bottom: -54px; */
+  left: 7%;
+  /* width: 100%; */
+  height: 20px;
+  display: flex;
+  align-items: center;
+  background: #F1F2F6;
+  padding: 35px 10px;
+  }
+.message_form input {
+    width: 40vw;
+    margin: 0px 10px 10px;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: beige;
+  }
+.message_form .btn {
+    margin-top: -9px;
+  }
+
+
+.btn_container {
+    margin: 10px 0px;
+    text-align: center;
+  }
+.btn {
+    /* padding: 10px 15px; */
+    /* border-radius: 5px; */
+    outline: none;
+    border: none;
+    /* background:#5352ED; */
+    color: #5352ED;
+    cursor: pointer;
+    transition: 0.3s ease-in-out all;
+    font-size: 16px;
+  }
+.btn:hover {
+    transform: scale(1.05);
+  }
