@@ -158,8 +158,12 @@
     border-right: 1px dashed var(--color-6);
     overflow-y: auto;
   }
-  
-
+  /* messages */
+  .messages {
+    height: calc(100vh - 210px);
+    overflow-y: auto;
+    border-bottom: 1px solid var(--color-6);
+  }
 
 
 
