@@ -1,3 +1,8 @@
+.messages {
+  
+  overflow-y: auto;
+  border-bottom: 1px solid var(--color-6);
+} 
 .message_wrapper {
     margin-top: 5px;
     padding: 0px 5px;
