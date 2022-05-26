@@ -6,7 +6,7 @@ const Message = ({ msg, user1 }) => {
 
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [msg]);
+  }, [msg, user1]);
 
   return (
     <div
