@@ -2,10 +2,9 @@ import React from "react";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
-import { ListItem, ListItemText, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import Users from "../chat/Users";
 import Logo from "../../assets/logo/Logo.png";
-import Img from "../../assets/svg/user.png";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 
@@ -47,12 +46,16 @@ const SideBar = ({ window, users, selectUser, user }) => {
         ))}
       </List>
       <div style={list}>
-        <a href="/profile" className="menu">
-          <AccountCircleOutlinedIcon />
-        </a>
-        <a href="/" className="menu">
-          <LogoutOutlinedIcon />
-        </a>
+        <div style={iconsRight}>
+          <a href="/profile" className="menu">
+            <AccountCircleOutlinedIcon />
+          </a>
+        </div>
+        <div style={iconsLeft}>
+          <a href="/" className="menu">
+            <LogoutOutlinedIcon />
+          </a>
+        </div>
       </div>
     </div>
   );
@@ -101,11 +104,21 @@ const logo = {
   marginBottom: " 40%",
 };
 const list = {
-  position: "relative",
+  position: "fixed",
+  bottom: "0",
   display: "flex",
   background: "#7C8396",
-  padding: "19px 10px",
-  marginTop: "65%",
-  justifyContent: "space-between",
+  padding: "35px 120px",
+  // marginTop: "65%",
+  justifyContent: "space-around",
+  alignItems: "center",
+};
+const iconsLeft = {
+  position: "absolute",
+  marginLeft: "170px",
+};
+const iconsRight = {
+  position: "absolute",
+  marginRight: "185px",
 };
 export default SideBar;
