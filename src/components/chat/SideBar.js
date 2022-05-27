@@ -7,10 +7,22 @@ import Users from "../chat/Users";
 import Logo from "../../assets/logo/Logo.png";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../../firebase";
+import { useAuth } from "../../context/ChatContext";
+import { Navigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
 const SideBar = ({ window, users, selectUser, chat, user1 }) => {
+  const { Signout, user } = useAuth();
+  const handleLogOut = async () => {
+    await updateDoc(doc(db, "users", user.uid), {
+      isOnline: false,
+    });
+    await Signout();
+    Navigate("/");
+  };
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const container =
     window !== undefined ? () => window().document.body : undefined;
@@ -58,9 +70,9 @@ const SideBar = ({ window, users, selectUser, chat, user1 }) => {
           </a>
         </div>
         <div style={iconsLeft}>
-          <a href="/" className="menu">
+          <button className="menu" onClick={handleLogOut}>
             <LogoutOutlinedIcon />
-          </a>
+          </button>
         </div>
       </div>
     </div>
