@@ -5,6 +5,7 @@
 .messages_container {
   position: relative;
   width: 100%;
+  margin-bottom: 4rem;
 }
 .menu{
   color: white    ;
@@ -14,9 +15,9 @@
     grid-template-columns: 2fr 3fr;
   }
   .message_form {
-    left: 3%;
+    
     right: 0;
-    bottom: 5px;
+    bottom: 0px;
   }
   .message_wrapper p {
     max-width: 75%;
