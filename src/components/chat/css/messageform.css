@@ -1,13 +1,15 @@
 .message_form {
-  position: absolute;
-  /* bottom: -54px; */
-  left: 7%;
-  /* width: 100%; */
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
   height: 20px;
   display: flex;
   align-items: center;
   background: #F1F2F6;
   padding: 35px 10px;
+  justify-content: center;
+
   }
 .message_form input {
     width: 40vw;
@@ -16,7 +18,7 @@
     border-radius: 5px;
     outline: none;
     border: none;
-    background: beige;
+    background: white;
   }
 .message_form .btn {
     margin-top: -9px;
