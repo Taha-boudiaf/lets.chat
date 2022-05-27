@@ -8,7 +8,10 @@
   margin-bottom: 4rem;
 }
 .menu{
-  color: white    ;
+  color: white;
+  background: transparent ;
+  border: none  ;
+  cursor: pointer;
 }
 @media screen and (max-width: 767px) {
   .home_container {
