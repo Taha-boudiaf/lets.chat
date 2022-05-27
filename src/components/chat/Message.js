@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-// import Moment from "react-moment";
+import Moment from "react-moment";
 import "../../components/chat/css/message.css";
 const Message = ({ msg, user1 }) => {
   const scrollRef = useRef();
@@ -17,7 +17,9 @@ const Message = ({ msg, user1 }) => {
         {msg.media ? <img src={msg.media} alt={msg.text} /> : null}
         {msg.text}
         <br />
-        <small>{/* <Moment fromNow>{msg.createdAt.toDate()}</Moment> */}</small>
+        <small>
+          <Moment fromNow>{msg.createdAt.toDate()}</Moment>
+        </small>
       </p>
     </div>
   );
