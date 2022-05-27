@@ -10,7 +10,6 @@
   }
   .user_detail {
     display: flex;
-    align-items: center;
   }
   .user_detail h4 {
     margin-left: 10px;
@@ -31,4 +30,31 @@
   }
   .offline {
     background: #eb4034;
+  }
+
+  .selected_user {
+    background: #fd8b93;
+  }
+  .truncate {
+    font-size: 14px;
+    white-space: nowrap;
+    width: 76%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 60px;
+    margin-top: -22px;
+
+  }
+  .truncate strong {
+    margin-right: 10px;
+  }
+  .unread {
+    margin-left: 10px;
+    background: var(--color-3);
+    color: white;
+    padding: 2px 4px;
+    border-radius: 10px;
+  }
+  .sm_screen {
+    display: none;
   }
