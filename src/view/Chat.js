@@ -151,7 +151,12 @@ const ResponsiveDrawer = () => {
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-        <SideBar users={users} selectUser={selectUser} user={user1} />
+        <SideBar
+          users={users}
+          selectUser={selectUser}
+          user1={user1}
+          chat={chat}
+        />
       </Box>
       <Box
         component="main"
