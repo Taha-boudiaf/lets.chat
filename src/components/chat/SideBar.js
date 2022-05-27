@@ -10,7 +10,7 @@ import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 
 const drawerWidth = 240;
 
-const SideBar = ({ window, users, selectUser, user }) => {
+const SideBar = ({ window, users, selectUser, chat, user1 }) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const container =
     window !== undefined ? () => window().document.body : undefined;
@@ -33,14 +33,20 @@ const SideBar = ({ window, users, selectUser, user }) => {
       </Typography>
 
       <h2>
-        {user.firstName} {user.lastName}
+        {user1.firstName} {user1.lastName}
       </h2>
       <Typography style={conversation}>Conversation</Typography>
       <Divider />
       <List>
         {users.map((user) => (
           <>
-            <Users key={user.uid} user={user} selectUser={selectUser} />
+            <Users
+              key={user.uid}
+              user={user}
+              user1={user1}
+              chat={chat}
+              selectUser={selectUser}
+            />
             <Divider />
           </>
         ))}
