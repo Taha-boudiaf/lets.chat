@@ -10,7 +10,7 @@ import { auth, db, storage } from "../firebase";
 import Camera from "../assets/svg/Camera";
 import Img from "../assets/svg/user.png";
 import Delete from "../assets/svg/Delete";
-import "../components/chat/chat.css";
+import "../view/profile.css";
 
 const Profile = () => {
   const [img, setImg] = useState("");
