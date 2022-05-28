@@ -24,9 +24,6 @@ const Users = ({ user, selectUser, user1, chat }) => {
             <img src={user.avatar || img} className="avatar" alt="avatar" />
             <h4>{user.firstName}</h4>
             <h4>{user.lastName}</h4>
-            {data?.from !== user1 && data?.unread && (
-              <small className="unread">New</small>
-            )}
           </div>
           <div
             className={`user_status ${user.isOnline ? "online" : "offline"}`}
@@ -36,6 +33,9 @@ const Users = ({ user, selectUser, user1, chat }) => {
           <p className="truncate">
             <strong>{data.from === user1 ? "Me:" : "Friend:"}</strong>
             {data.text}
+            {data?.from !== user1 && data?.unread && (
+              <small className="unread">New</small>
+            )}
           </p>
         )}
       </div>
