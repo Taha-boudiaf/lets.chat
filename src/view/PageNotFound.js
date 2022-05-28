@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import { Container } from "@mui/material";
+import Footer from "../components/layout/Footer";
+import Navbar from "../components/layout/Navbar";
 
 const PageNotFound = () => {
   return (
-    <div>PageNotFound</div>
-  )
-}
+    <div>
+      <Navbar />
+      <Container maxWidth="lg">404 Page Not Found</Container>
 
-export default PageNotFound
+      <Footer />
+    </div>
+  );
+};
+
+export default PageNotFound;
