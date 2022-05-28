@@ -50,7 +50,7 @@
   }
   .unread {
     margin-left: 10px;
-    background: var(--color-3);
+    background: blue;
     color: white;
     padding: 2px 4px;
     border-radius: 10px;
