@@ -1,31 +1,30 @@
 import React from "react";
 import { Button, Container, Grid, Typography } from "@mui/material";
-
-import styles from "../components/css/home.module.css";
 import LandingPage from "../assets/lanPge.png";
 import Contacts from "../assets/contacts.png";
 import Notifications from "../assets/notification.png";
 import ChatWithUs from "../assets/chatWithUs.png";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import "../components/css/home.css";
 
 const Home = () => {
   return (
-    <>
+    <div style={{ background: "#ffffff" }}>
       <Navbar />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-            <Typography className={styles.heading}>
+            <Typography className="heading">
               Your Friends Come To You.
             </Typography>
-            <Typography className={styles.sub__heading}>
+            <Typography className="sub__heading">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitationv Come To You
             </Typography>
             <a href="/chat">
-              <Button className={styles.btn}>
+              <Button className="btn">
                 <svg
                   width="28"
                   height="28"
@@ -53,45 +52,45 @@ const Home = () => {
               </Button>
             </a>
           </Grid>
-          <Grid item xs={12} md={6} className={styles.landing__page}>
+          <Grid item xs={12} md={6} className="landing__page">
             <img src={LandingPage} alt="landing__page" />
           </Grid>
           <Grid
-            className={styles.RowBottom}
+            className="RowBottom"
             item
             xs={12}
             display="flex"
             justifyContent="space-around"
           >
             <div>
-              <Typography className={styles.bottom}>Participants</Typography>
+              <Typography className="bottom">Participants</Typography>
               <img
                 src={Contacts}
                 alt="landing__page"
-                className={styles.participants}
+                className="participants"
               />
             </div>
             <div>
-              <Typography className={styles.bottom}>Notifications</Typography>
+              <Typography className="bottom">Notifications</Typography>
               <img
                 src={Notifications}
                 alt="landing__page"
-                className={styles.Notifications}
+                className="Notifications"
               />
             </div>
             <div>
-              <Typography className={styles.bottom3}>Chat With Us</Typography>
+              <Typography className="bottom3">Chat With Us</Typography>
               <img
                 src={ChatWithUs}
                 alt="landing__page"
-                className={styles.ChatWithUs}
+                className="ChatWithUs"
               />
             </div>
           </Grid>
         </Grid>
       </Container>
       <Footer />
-    </>
+    </div>
   );
 };
 
