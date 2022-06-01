@@ -9,12 +9,11 @@ import { useNavigate } from "react-router-dom";
 import { doc, setDoc, Timestamp } from "firebase/firestore";
 import { db } from "../firebase";
 import DateTimePicker from "../components/FormUI/DataTimePicker/index";
-import styles from "../components/css/register.module.css";
 import Select from "../components/FormUI/Select/index";
 import countries from "../data/data.json";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
-
+import "../components/css/register.css";
 const FORM_VALIDATION = Validation;
 
 const Register = () => {
@@ -49,8 +48,18 @@ const Register = () => {
     <>
       <Navbar />
       <Container maxWidth="lg">
-        <Grid container spacing={4} className={styles.con}>
-          <Paper className={styles.Paper}>
+        <Grid
+          container
+          spacing={4}
+          style={{
+            marginLeft: "auto",
+            marginRight: "auto",
+            maxWidth: "36rem",
+            marginTop: "100px",
+            marginBottom: "145px",
+          }}
+        >
+          <Paper style={{ padding: "2rem" }}>
             <div>
               <Typography
                 variant="h3"
@@ -79,28 +88,28 @@ const Register = () => {
                   <Grid container spacing={2}>
                     <Grid item xs={6}>
                       <Textfield
-                        className={styles.field}
+                        style={{ borderRadius: "5px", marginTop: "12px" }}
                         name="firstName"
                         label="FirstName"
                       />
                     </Grid>
                     <Grid item xs={6}>
                       <Textfield
-                        className={styles.field}
+                        style={{ borderRadius: "5px", marginTop: "12px" }}
                         name="lastName"
                         label="LastName"
                       />
                     </Grid>
                     <Grid item xs={12}>
                       <Textfield
-                        className={styles.field}
+                        style={{ borderRadius: "5px", marginTop: "12px" }}
                         name="email"
                         label="Email"
                       />
                     </Grid>
                     <Grid item xs={12}>
                       <Textfield
-                        className={styles.field}
+                        style={{ borderRadius: "5px", marginTop: "12px" }}
                         name="password"
                         label="Password"
                         type="password"
@@ -108,7 +117,7 @@ const Register = () => {
                     </Grid>
                     <Grid item xs={12}>
                       <Textfield
-                        className={styles.field}
+                        style={{ borderRadius: "5px", marginTop: "12px" }}
                         name="phoneNumber"
                         label="number"
                       />
@@ -118,19 +127,33 @@ const Register = () => {
                         name="country"
                         label="Country"
                         options={countries}
-                        className={styles.field}
+                        style={{ borderRadius: "5px", marginTop: "12px" }}
                       />
                     </Grid>
                     <Grid item xs={6}>
                       <DateTimePicker
-                        className={styles.field}
+                        style={{ borderRadius: "5px", marginTop: "12px" }}
                         name="birthDay"
                         label="birthDay"
                       />
                     </Grid>
 
                     <Grid item xs={12}>
-                      <Button className={styles.btn}>Conect Now</Button>
+                      <Button
+                        className="btn"
+                        style={{
+                          background: "#7373f0",
+                          padding: " 0.895rem",
+                          fontSize: "1rem",
+                          fontWeight: "600",
+                          borderRadius: "5px",
+                          ":hover": {
+                            background: "#2F3542",
+                          },
+                        }}
+                      >
+                        Conect Now
+                      </Button>
                     </Grid>
                     <div>
                       <Typography

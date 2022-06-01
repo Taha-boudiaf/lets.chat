@@ -6,7 +6,7 @@ import { Validation } from "../components/FormUI/Yup/loginYup";
 import { useAuth } from "../context/ChatContext";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
-import styles from "../components/css/register.module.css";
+import "../components/css/register.css";
 import TextField from "../components/FormUI/Textfield/index";
 import Button from "../components/FormUI/Submit/index";
 import Navbar from "../components/layout/Navbar";
@@ -37,8 +37,18 @@ const Login = () => {
     <>
       <Navbar />
       <Container maxWidth="lg">
-        <Grid container spacing={4} className={styles.con}>
-          <Paper className={styles.Paper} style={{ marginBottom: "15px" }}>
+        <Grid
+          container
+          spacing={4}
+          style={{
+            marginLeft: "auto",
+            marginRight: "auto",
+            maxWidth: "36rem",
+            marginTop: "100px",
+            marginBottom: "145px",
+          }}
+        >
+          <Paper style={{ padding: "2rem", marginBottom: "15px" }}>
             <div>
               <Typography
                 variant="h3"
@@ -67,21 +77,34 @@ const Login = () => {
                   <Grid container spacing={2}>
                     <Grid item xs={12}>
                       <TextField
-                        className={styles.field}
+                        style={{ marginTop: "24px", borderRadius: "5px" }}
                         name="email"
                         label="Email"
                       />
                     </Grid>
                     <Grid item xs={12}>
                       <TextField
-                        className={styles.field}
+                        style={{ borderRadius: "5px", marginTop: "24px" }}
                         name="password"
                         label="Password"
                         type="password"
                       />
                     </Grid>
                     <Grid item xs={12}>
-                      <Button className={styles.btn}>Conect Now</Button>
+                      <Button
+                        style={{
+                          background: "#7373f0",
+                          padding: " 0.895rem",
+                          fontSize: "1rem",
+                          fontWeight: "600",
+                          borderRadius: "5px",
+                          "&:hover": {
+                            background: "#2F3542",
+                          },
+                        }}
+                      >
+                        Conect Now
+                      </Button>
                     </Grid>
                     <div>
                       <Typography
