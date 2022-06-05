@@ -4,7 +4,7 @@ Let's chat is a text communication service used to hang out and talk with their 
 supports sending and receiving a variety of media: text and photos.
 #Link
 
-lets-chat-three.vercel.app
+(lets-chat-three.vercel.app)
 
 # ScreenShot
 
