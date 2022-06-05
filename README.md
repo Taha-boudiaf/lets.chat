@@ -5,7 +5,7 @@ supports sending and receiving a variety of media: text and photos.
 
 # Link
 
-[lets-chat-three.vercel.app].(lets-chat-three.vercel.app)
+[lets-chat-three.vercel.app].(https://lets-chat-three.vercel.app/)
 
 # ScreenShot
 
