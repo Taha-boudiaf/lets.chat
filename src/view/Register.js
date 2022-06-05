@@ -13,7 +13,7 @@ import Select from "../components/FormUI/Select/index";
 import countries from "../data/data.json";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
-import "../components/css/register.css";
+
 const FORM_VALIDATION = Validation;
 
 const Register = () => {
@@ -140,17 +140,17 @@ const Register = () => {
 
                     <Grid item xs={12}>
                       <Button
-                        className="btn"
                         style={{
                           background: "#7373f0",
                           padding: " 0.895rem",
                           fontSize: "1rem",
                           fontWeight: "600",
                           borderRadius: "5px",
-                          ":hover": {
+                          "&:hover": {
                             background: "#2F3542",
                           },
                         }}
+                        className="btn"
                       >
                         Conect Now
                       </Button>
