@@ -22,6 +22,5 @@ const footer = {
   color: " #4b5563",
   fontSize: ".875rem!important",
   lineHeight: "-3.75rem!important",
-  marginTop: "10px",
 };
 export default Footer;
