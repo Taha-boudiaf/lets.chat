@@ -28,7 +28,7 @@ supports sending and receiving a variety of media: text and photos.
 * log in 
 * log out
 * upload image to profile
-* sending / receiving : image in chat
+* sending / receiving : image and text
 
 # Installing dependencies
 
