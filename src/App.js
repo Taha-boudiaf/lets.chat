@@ -16,8 +16,8 @@ import "./App.css";
 function App() {
   return (
     <UserAuthContext>
-      <Router>
-        <div className="App">
+      <div className="App">
+        <Router>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
@@ -35,8 +35,8 @@ function App() {
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="*" element={<PageNoFound />} />
           </Routes>
-        </div>
-      </Router>
+        </Router>
+      </div>
     </UserAuthContext>
   );
 }
