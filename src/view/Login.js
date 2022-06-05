@@ -6,11 +6,11 @@ import { Validation } from "../components/FormUI/Yup/loginYup";
 import { useAuth } from "../context/ChatContext";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
-import "../components/css/register.css";
 import TextField from "../components/FormUI/Textfield/index";
 import Button from "../components/FormUI/Submit/index";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import "./register.css";
 
 const FORM_VALIDATION = Validation;
 
@@ -98,9 +98,6 @@ const Login = () => {
                           fontSize: "1rem",
                           fontWeight: "600",
                           borderRadius: "5px",
-                          "&:hover": {
-                            background: "#2F3542",
-                          },
                         }}
                       >
                         Conect Now
