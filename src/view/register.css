@@ -1,0 +1,13 @@
+@media only screen and (max-width: 600px) {
+    .con {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        max-width: 24rem;
+    } 
+
+    .paper{
+        padding: 1rem;
+    }
+}
