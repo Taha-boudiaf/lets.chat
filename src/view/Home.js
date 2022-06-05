@@ -6,25 +6,25 @@ import Notifications from "../assets/notification.png";
 import ChatWithUs from "../assets/chatWithUs.png";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
-import "../components/css/home.css";
+import styles from "./home.module.css";
 
 const Home = () => {
   return (
-    <div style={{ background: "#ffffff" }}>
+    <div style={{ background: "#e0e0fc" }}>
       <Navbar />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-            <Typography className="heading">
+            <Typography class={styles.heading}>
               Your Friends Come To You.
             </Typography>
-            <Typography className="sub__heading">
+            <Typography class={styles.sub__heading}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitationv Come To You
             </Typography>
             <a href="/chat">
-              <Button className="btn">
+              <Button class={styles.btn}>
                 <svg
                   width="28"
                   height="28"
@@ -52,8 +52,8 @@ const Home = () => {
               </Button>
             </a>
           </Grid>
-          <Grid item xs={12} md={6} className="landing__page">
-            <img src={LandingPage} alt="landing__page" />
+          <Grid item xs={12} md={6} className={styles.landing__page}>
+            <img src={LandingPage} alt={styles.landing__page} />
           </Grid>
           <Grid
             className="RowBottom"
@@ -63,27 +63,27 @@ const Home = () => {
             justifyContent="space-around"
           >
             <div>
-              <Typography className="bottom">Participants</Typography>
+              <Typography class={styles.bottom}>Participants</Typography>
               <img
                 src={Contacts}
                 alt="landing__page"
-                className="participants"
+                className={styles.participants}
               />
             </div>
             <div>
-              <Typography className="bottom">Notifications</Typography>
+              <Typography class={styles.bottom}>Notifications</Typography>
               <img
                 src={Notifications}
                 alt="landing__page"
-                className="Notifications"
+                class={styles.Notifications}
               />
             </div>
             <div>
-              <Typography className="bottom3">Chat With Us</Typography>
+              <Typography class={styles.bottom3}>Chat With Us</Typography>
               <img
                 src={ChatWithUs}
                 alt="landing__page"
-                className="ChatWithUs"
+                class={styles.ChatWithUs}
               />
             </div>
           </Grid>
