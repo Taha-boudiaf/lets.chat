@@ -6,14 +6,16 @@ const Contact = () => {
   return (
     <div>
       <Navbar />
-      <div class="container">
+      <div className="container">
         <form>
-          <h1>Contact Us </h1>
+          <h1>
+            Contact <span style={{ color: "#5352edcc" }}>Us</span>{" "}
+          </h1>
           <p>
             Feel free to contact us if you need any assistance, any help or
             another question.
           </p>
-          <input type="text" placeholder="Name" required autofocus />
+          <input type="text" placeholder="Name" required autoFocus />
           <input type="email" placeholder="Email" required />
           <input type="tel" placeholder="Mobile Number" />
           <textarea placeholder="Message" required></textarea>
